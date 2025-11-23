@@ -16,7 +16,14 @@ public class GildedRose
         foreach (var item in Items)
         {
             var isAgedBrie = item.Name == "Aged Brie";
-            Pants(isAgedBrie, item);
+            if (isAgedBrie)
+            {
+                Pants(true, item);
+            }
+            else
+            {
+                Pants(false, item);
+            }
         }
     }
 
