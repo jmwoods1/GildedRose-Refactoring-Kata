@@ -103,9 +103,7 @@ public class GildedRose
     {
         foreach (var item in Items)
         {
-            IItemStrategy strategy;
-            strategy = StrategyFactory(item);
-
+            var strategy = StrategyFactory(item);
             strategy.Update(item);
         }
     }
