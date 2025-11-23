@@ -15,6 +15,7 @@ public class GildedRose
     {
         foreach (var item in Items)
         {
+            var isBackstagePasses = item.Name == "Backstage passes to a TAFKAL80ETC concert";
             if (item.Name == "Aged Brie")
             {
                 if (item.Quality < 50)
@@ -34,13 +35,13 @@ public class GildedRose
             }
             else
             {
-                if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+                if (isBackstagePasses)
                 {
                     if (item.Quality < 50)
                     {
                         item.Quality += 1;
 
-                        if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+                        if (isBackstagePasses)
                         {
                             if (item.SellIn < 11)
                             {
@@ -84,7 +85,7 @@ public class GildedRose
 
                 if (item.SellIn < 0)
                 {
-                    if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+                    if (isBackstagePasses)
                     {
                         item.Quality -= item.Quality;
                     }
