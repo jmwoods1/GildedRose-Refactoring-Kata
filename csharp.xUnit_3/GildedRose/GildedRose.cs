@@ -4,10 +4,6 @@ namespace GildedRoseKata;
 
 public class NormalItemStrategy
 {
-    public NormalItemStrategy()
-    {
-    }
-
     public void UpdateNormalItem(Item item)
     {
         if (item.Quality > 0)
@@ -29,10 +25,6 @@ public class NormalItemStrategy
 
 public class AgedBrieStrategy
 {
-    public AgedBrieStrategy()
-    {
-    }
-
     public void UpdateAgedBrie(Item item)
     {
         if (item.Quality < 50)
@@ -54,10 +46,6 @@ public class AgedBrieStrategy
 
 public class BackstagePassesStrategy
 {
-    public BackstagePassesStrategy()
-    {
-    }
-
     public void UpdateBackstagePasses(Item item)
     {
         if (item.Quality < 50)
@@ -92,10 +80,6 @@ public class BackstagePassesStrategy
 
 public class SulfurasStrategy
 {
-    public SulfurasStrategy()
-    {
-    }
-
     public void UpdateSulfuras()
     {
     }
