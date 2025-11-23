@@ -2,6 +2,11 @@
 
 namespace GildedRoseKata;
 
+public interface IItemStrategy
+{
+    void Update(Item item);
+}
+
 public class NormalItemStrategy
 {
     public void Update(Item item)
@@ -80,7 +85,7 @@ public class BackstagePassesStrategy
 
 public class SulfurasStrategy
 {
-    public void Update()
+    public void Update(Item item)
     {
     }
 }
@@ -101,7 +106,7 @@ public class GildedRose
             IItemStrategy strategy = null;
             if (item.Name == "Sulfuras, Hand of Ragnaros")
             {
-                new SulfurasStrategy().Update();
+                new SulfurasStrategy().Update(item);
             }
             else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
@@ -119,7 +124,3 @@ public class GildedRose
     }
 }
 
-public interface IItemStrategy
-{
-    void Update(Item item);
-}
