@@ -45,26 +45,45 @@ public class GildedRose
                     item.Quality -= item.Quality;
                 }
             }
-            else
+            else if (item.Name == "Aged Brie")
             {
-                if (item.Name == "Aged Brie")
+                if (item.Quality < 50)
+                {
+                    item.Quality += 1;
+                }
+
+                item.SellIn -= 1;
+
+                if (item.SellIn < 0)
                 {
                     if (item.Quality < 50)
                     {
                         item.Quality += 1;
                     }
-
-                    item.SellIn -= 1;
-
-                    if (item.SellIn < 0)
+                }
+            }
+            else
+            {
+                if (item.Quality > 0)
+                {
+                    if (item.Name == "Sulfuras, Hand of Ragnaros")
                     {
-                        if (item.Quality < 50)
-                        {
-                            item.Quality += 1;
-                        }
+                    }
+                    else
+                    {
+                        item.Quality -= 1;
                     }
                 }
+
+                if (item.Name == "Sulfuras, Hand of Ragnaros")
+                {
+                }
                 else
+                {
+                    item.SellIn -= 1;
+                }
+
+                if (item.SellIn < 0)
                 {
                     if (item.Quality > 0)
                     {
@@ -74,28 +93,6 @@ public class GildedRose
                         else
                         {
                             item.Quality -= 1;
-                        }
-                    }
-
-                    if (item.Name == "Sulfuras, Hand of Ragnaros")
-                    {
-                    }
-                    else
-                    {
-                        item.SellIn -= 1;
-                    }
-
-                    if (item.SellIn < 0)
-                    {
-                        if (item.Quality > 0)
-                        {
-                            if (item.Name == "Sulfuras, Hand of Ragnaros")
-                            {
-                            }
-                            else
-                            {
-                                item.Quality -= 1;
-                            }
                         }
                     }
                 }
