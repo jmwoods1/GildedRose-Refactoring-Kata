@@ -107,22 +107,18 @@ public class GildedRose
             if (item.Name == "Sulfuras, Hand of Ragnaros")
             {
                 strategy = new SulfurasStrategy();
-                //new SulfurasStrategy().Update(item);
             }
             else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
                 strategy = new BackstagePassesStrategy();
-                //new BackstagePassesStrategy().Update(item);
             }
             else if (item.Name == "Aged Brie")
             {
                 strategy = new AgedBrieStrategy();
-                //new AgedBrieStrategy().Update(item);
             }
             else
             {
                 strategy = new NormalItemStrategy();
-                //new NormalItemStrategy().Update(item);
             }
 
             strategy.Update(item);
