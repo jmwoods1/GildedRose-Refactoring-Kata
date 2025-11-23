@@ -18,95 +18,171 @@ public class GildedRose
             var isSulfuras = item.Name == "Sulfuras, Hand of Ragnaros";
             if (isSulfuras)
             {
-                Pants(item, true);
-            }
-            else
-            {
-                Pants(item, false);
-            }
-        }
-    }
+                if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+                {
+                    if (item.Quality < 50)
+                    {
+                        item.Quality += 1;
 
-    private void Pants(Item item, bool isSulfuras)
-    {
-        if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-        {
-            if (item.Quality < 50)
-            {
-                item.Quality += 1;
+                        if (item.SellIn < 11)
+                        {
+                            if (item.Quality < 50)
+                            {
+                                item.Quality += 1;
+                            }
+                        }
 
-                if (item.SellIn < 11)
+                        if (item.SellIn < 6)
+                        {
+                            if (item.Quality < 50)
+                            {
+                                item.Quality += 1;
+                            }
+                        }
+                    }
+
+                    item.SellIn -= 1;
+
+                    if (item.SellIn < 0)
+                    {
+                        item.Quality -= item.Quality;
+                    }
+                }
+                else if (item.Name == "Aged Brie")
                 {
                     if (item.Quality < 50)
                     {
                         item.Quality += 1;
                     }
-                }
 
-                if (item.SellIn < 6)
-                {
-                    if (item.Quality < 50)
+                    item.SellIn -= 1;
+
+                    if (item.SellIn < 0)
                     {
-                        item.Quality += 1;
+                        if (item.Quality < 50)
+                        {
+                            item.Quality += 1;
+                        }
                     }
-                }
-            }
-
-            item.SellIn -= 1;
-
-            if (item.SellIn < 0)
-            {
-                item.Quality -= item.Quality;
-            }
-        }
-        else if (item.Name == "Aged Brie")
-        {
-            if (item.Quality < 50)
-            {
-                item.Quality += 1;
-            }
-
-            item.SellIn -= 1;
-
-            if (item.SellIn < 0)
-            {
-                if (item.Quality < 50)
-                {
-                    item.Quality += 1;
-                }
-            }
-        }
-        else
-        {
-            if (item.Quality > 0)
-            {
-                if (isSulfuras)
-                {
                 }
                 else
                 {
-                    item.Quality -= 1;
-                }
-            }
+                    if (item.Quality > 0)
+                    {
+                        if (true)
+                        {
+                        }
+                        else
+                        {
+                            item.Quality -= 1;
+                        }
+                    }
 
-            if (isSulfuras)
-            {
-            }
-            else
-            {
-                item.SellIn -= 1;
-            }
-
-            if (item.SellIn < 0)
-            {
-                if (item.Quality > 0)
-                {
-                    if (isSulfuras)
+                    if (true)
                     {
                     }
                     else
                     {
-                        item.Quality -= 1;
+                        item.SellIn -= 1;
+                    }
+
+                    if (item.SellIn < 0)
+                    {
+                        if (item.Quality > 0)
+                        {
+                            if (true)
+                            {
+                            }
+                            else
+                            {
+                                item.Quality -= 1;
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+                {
+                    if (item.Quality < 50)
+                    {
+                        item.Quality += 1;
+
+                        if (item.SellIn < 11)
+                        {
+                            if (item.Quality < 50)
+                            {
+                                item.Quality += 1;
+                            }
+                        }
+
+                        if (item.SellIn < 6)
+                        {
+                            if (item.Quality < 50)
+                            {
+                                item.Quality += 1;
+                            }
+                        }
+                    }
+
+                    item.SellIn -= 1;
+
+                    if (item.SellIn < 0)
+                    {
+                        item.Quality -= item.Quality;
+                    }
+                }
+                else if (item.Name == "Aged Brie")
+                {
+                    if (item.Quality < 50)
+                    {
+                        item.Quality += 1;
+                    }
+
+                    item.SellIn -= 1;
+
+                    if (item.SellIn < 0)
+                    {
+                        if (item.Quality < 50)
+                        {
+                            item.Quality += 1;
+                        }
+                    }
+                }
+                else
+                {
+                    if (item.Quality > 0)
+                    {
+                        if (false)
+                        {
+                        }
+                        else
+                        {
+                            item.Quality -= 1;
+                        }
+                    }
+
+                    if (false)
+                    {
+                    }
+                    else
+                    {
+                        item.SellIn -= 1;
+                    }
+
+                    if (item.SellIn < 0)
+                    {
+                        if (item.Quality > 0)
+                        {
+                            if (false)
+                            {
+                            }
+                            else
+                            {
+                                item.Quality -= 1;
+                            }
+                        }
                     }
                 }
             }
