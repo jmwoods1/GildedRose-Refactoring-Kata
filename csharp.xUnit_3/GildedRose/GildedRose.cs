@@ -18,24 +18,18 @@ public class GildedRose
             var isAgedBrie = item.Name == "Aged Brie";
             if (isAgedBrie)
             {
-                if (true)
+                if (item.Quality < 50)
                 {
-                    if (item.Quality < 50)
-                    {
-                        item.Quality += 1;
-                    }
+                    item.Quality += 1;
                 }
 
                 item.SellIn -= 1;
 
                 if (item.SellIn < 0)
                 {
-                    if (true)
+                    if (item.Quality < 50)
                     {
-                        if (item.Quality < 50)
-                        {
-                            item.Quality += 1;
-                        }
+                        item.Quality += 1;
                     }
                 }
             }
