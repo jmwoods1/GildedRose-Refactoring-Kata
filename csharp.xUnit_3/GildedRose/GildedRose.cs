@@ -15,6 +15,7 @@ public class GildedRose
     {
         foreach (var item in Items)
         {
+            var isSulfuras = item.Name == "Sulfuras, Hand of Ragnaros";
             if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
                 if (item.Quality < 50)
@@ -66,7 +67,7 @@ public class GildedRose
             {
                 if (item.Quality > 0)
                 {
-                    if (item.Name == "Sulfuras, Hand of Ragnaros")
+                    if (isSulfuras)
                     {
                     }
                     else
@@ -75,7 +76,7 @@ public class GildedRose
                     }
                 }
 
-                if (item.Name == "Sulfuras, Hand of Ragnaros")
+                if (isSulfuras)
                 {
                 }
                 else
@@ -87,7 +88,7 @@ public class GildedRose
                 {
                     if (item.Quality > 0)
                     {
-                        if (item.Name == "Sulfuras, Hand of Ragnaros")
+                        if (isSulfuras)
                         {
                         }
                         else
