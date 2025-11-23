@@ -7,7 +7,7 @@ public interface IItemStrategy
     void Update(Item item);
 }
 
-public class NormalItemStrategy
+public class NormalItemStrategy :  IItemStrategy
 {
     public void Update(Item item)
     {
@@ -28,7 +28,7 @@ public class NormalItemStrategy
     }
 }
 
-public class AgedBrieStrategy
+public class AgedBrieStrategy :  IItemStrategy
 {
     public void Update(Item item)
     {
@@ -49,7 +49,7 @@ public class AgedBrieStrategy
     }
 }
 
-public class BackstagePassesStrategy
+public class BackstagePassesStrategy :  IItemStrategy
 {
     public void Update(Item item)
     {
@@ -83,7 +83,7 @@ public class BackstagePassesStrategy
     }
 }
 
-public class SulfurasStrategy
+public class SulfurasStrategy : IItemStrategy
 {
     public void Update(Item item)
     {
