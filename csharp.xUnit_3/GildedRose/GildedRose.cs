@@ -15,8 +15,7 @@ public class GildedRose
     {
         foreach (var item in Items)
         {
-            var isBackstagePasses = item.Name == "Backstage passes to a TAFKAL80ETC concert";
-            if (isBackstagePasses)
+            if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
                 if (item.Quality < 50)
                 {
