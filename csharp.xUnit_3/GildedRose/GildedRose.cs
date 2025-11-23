@@ -120,6 +120,11 @@ public class GildedRose
             {
                 new NormalItemStrategy().Update(item);
             }
+
+            if (strategy != null)
+            {
+                strategy.Update(item);
+            }
         }
     }
 }
