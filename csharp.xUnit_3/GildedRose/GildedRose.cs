@@ -116,7 +116,8 @@ public class GildedRose
             }
             else if (item.Name == "Aged Brie")
             {
-                new AgedBrieStrategy().Update(item);
+                strategy = new AgedBrieStrategy();
+                //new AgedBrieStrategy().Update(item);
             }
             else
             {
