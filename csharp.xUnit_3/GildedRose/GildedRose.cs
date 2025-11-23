@@ -121,7 +121,8 @@ public class GildedRose
             }
             else
             {
-                new NormalItemStrategy().Update(item);
+                strategy = new NormalItemStrategy();
+                //new NormalItemStrategy().Update(item);
             }
 
             if (strategy != null)
