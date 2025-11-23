@@ -16,46 +16,27 @@ public class GildedRose
         foreach (var item in Items)
         {
             var isSulfuras = item.Name == "Sulfuras, Hand of Ragnaros";
-            if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+            Pants(item, isSulfuras);
+        }
+    }
+
+    private void Pants(Item item, bool isSulfuras)
+    {
+        if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+        {
+            if (item.Quality < 50)
             {
-                if (item.Quality < 50)
+                item.Quality += 1;
+
+                if (item.SellIn < 11)
                 {
-                    item.Quality += 1;
-
-                    if (item.SellIn < 11)
+                    if (item.Quality < 50)
                     {
-                        if (item.Quality < 50)
-                        {
-                            item.Quality += 1;
-                        }
-                    }
-
-                    if (item.SellIn < 6)
-                    {
-                        if (item.Quality < 50)
-                        {
-                            item.Quality += 1;
-                        }
+                        item.Quality += 1;
                     }
                 }
 
-                item.SellIn -= 1;
-
-                if (item.SellIn < 0)
-                {
-                    item.Quality -= item.Quality;
-                }
-            }
-            else if (item.Name == "Aged Brie")
-            {
-                if (item.Quality < 50)
-                {
-                    item.Quality += 1;
-                }
-
-                item.SellIn -= 1;
-
-                if (item.SellIn < 0)
+                if (item.SellIn < 6)
                 {
                     if (item.Quality < 50)
                     {
@@ -63,7 +44,53 @@ public class GildedRose
                     }
                 }
             }
+
+            item.SellIn -= 1;
+
+            if (item.SellIn < 0)
+            {
+                item.Quality -= item.Quality;
+            }
+        }
+        else if (item.Name == "Aged Brie")
+        {
+            if (item.Quality < 50)
+            {
+                item.Quality += 1;
+            }
+
+            item.SellIn -= 1;
+
+            if (item.SellIn < 0)
+            {
+                if (item.Quality < 50)
+                {
+                    item.Quality += 1;
+                }
+            }
+        }
+        else
+        {
+            if (item.Quality > 0)
+            {
+                if (isSulfuras)
+                {
+                }
+                else
+                {
+                    item.Quality -= 1;
+                }
+            }
+
+            if (isSulfuras)
+            {
+            }
             else
+            {
+                item.SellIn -= 1;
+            }
+
+            if (item.SellIn < 0)
             {
                 if (item.Quality > 0)
                 {
@@ -73,28 +100,6 @@ public class GildedRose
                     else
                     {
                         item.Quality -= 1;
-                    }
-                }
-
-                if (isSulfuras)
-                {
-                }
-                else
-                {
-                    item.SellIn -= 1;
-                }
-
-                if (item.SellIn < 0)
-                {
-                    if (item.Quality > 0)
-                    {
-                        if (isSulfuras)
-                        {
-                        }
-                        else
-                        {
-                            item.Quality -= 1;
-                        }
                     }
                 }
             }
