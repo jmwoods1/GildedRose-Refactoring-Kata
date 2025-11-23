@@ -16,7 +16,14 @@ public class GildedRose
         foreach (var item in Items)
         {
             var isBackstagePasses = item.Name == "Backstage passes to a TAFKAL80ETC concert";
-            Pants(item, isBackstagePasses);
+            if (isBackstagePasses)
+            {
+                Pants(item, true);
+            }
+            else
+            {
+                Pants(item, false);
+            }
         }
     }
 
