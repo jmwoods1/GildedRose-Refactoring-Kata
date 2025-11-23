@@ -18,88 +18,6 @@ public class GildedRose
             var isSulfuras = item.Name == "Sulfuras, Hand of Ragnaros";
             if (isSulfuras)
             {
-                if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-                {
-                    if (item.Quality < 50)
-                    {
-                        item.Quality += 1;
-
-                        if (item.SellIn < 11)
-                        {
-                            if (item.Quality < 50)
-                            {
-                                item.Quality += 1;
-                            }
-                        }
-
-                        if (item.SellIn < 6)
-                        {
-                            if (item.Quality < 50)
-                            {
-                                item.Quality += 1;
-                            }
-                        }
-                    }
-
-                    item.SellIn -= 1;
-
-                    if (item.SellIn < 0)
-                    {
-                        item.Quality -= item.Quality;
-                    }
-                }
-                else if (item.Name == "Aged Brie")
-                {
-                    if (item.Quality < 50)
-                    {
-                        item.Quality += 1;
-                    }
-
-                    item.SellIn -= 1;
-
-                    if (item.SellIn < 0)
-                    {
-                        if (item.Quality < 50)
-                        {
-                            item.Quality += 1;
-                        }
-                    }
-                }
-                else
-                {
-                    if (item.Quality > 0)
-                    {
-                        if (true)
-                        {
-                        }
-                        else
-                        {
-                            item.Quality -= 1;
-                        }
-                    }
-
-                    if (true)
-                    {
-                    }
-                    else
-                    {
-                        item.SellIn -= 1;
-                    }
-
-                    if (item.SellIn < 0)
-                    {
-                        if (item.Quality > 0)
-                        {
-                            if (true)
-                            {
-                            }
-                            else
-                            {
-                                item.Quality -= 1;
-                            }
-                        }
-                    }
-                }
             }
             else
             {
@@ -154,34 +72,16 @@ public class GildedRose
                 {
                     if (item.Quality > 0)
                     {
-                        if (false)
-                        {
-                        }
-                        else
-                        {
-                            item.Quality -= 1;
-                        }
+                        item.Quality -= 1;
                     }
 
-                    if (false)
-                    {
-                    }
-                    else
-                    {
-                        item.SellIn -= 1;
-                    }
+                    item.SellIn -= 1;
 
                     if (item.SellIn < 0)
                     {
                         if (item.Quality > 0)
                         {
-                            if (false)
-                            {
-                            }
-                            else
-                            {
-                                item.Quality -= 1;
-                            }
+                            item.Quality -= 1;
                         }
                     }
                 }
