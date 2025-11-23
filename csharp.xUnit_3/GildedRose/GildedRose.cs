@@ -111,7 +111,8 @@ public class GildedRose
             }
             else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
-                new BackstagePassesStrategy().Update(item);
+                strategy = new BackstagePassesStrategy();
+                //new BackstagePassesStrategy().Update(item);
             }
             else if (item.Name == "Aged Brie")
             {
