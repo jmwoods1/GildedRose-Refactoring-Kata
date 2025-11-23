@@ -15,7 +15,8 @@ public class GildedRose
     {
         foreach (var item in Items)
         {
-            if (item.Name == "Aged Brie")
+            var isAgedBrie = item.Name == "Aged Brie";
+            if (isAgedBrie)
             {
                 if (item.Quality < 50)
                 {
@@ -94,7 +95,7 @@ public class GildedRose
 
             if (item.SellIn < 0)
             {
-                if (item.Name == "Aged Brie")
+                if (isAgedBrie)
                 {
                     if (item.Quality < 50)
                     {
