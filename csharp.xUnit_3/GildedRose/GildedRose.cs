@@ -15,8 +15,7 @@ public class GildedRose
     {
         foreach (var item in Items)
         {
-            var isAgedBrie = item.Name == "Aged Brie";
-            if (isAgedBrie)
+            if (item.Name == "Aged Brie")
             {
                 if (item.Quality < 50)
                 {
