@@ -52,43 +52,13 @@ public class AgedBrieStrategy
     }
 }
 
-public class GildedRose
+public class BackstagePassesStrategy
 {
-    IList<Item> Items;
-    private readonly NormalItemStrategy _normalItemStrategy;
-    private readonly AgedBrieStrategy _agedBrieStrategy;
-
-    public GildedRose(IList<Item> Items)
+    public BackstagePassesStrategy()
     {
-        this.Items = Items;
-        _normalItemStrategy = new NormalItemStrategy();
-        _agedBrieStrategy = new AgedBrieStrategy();
     }
 
-    public void UpdateQuality()
-    {
-        foreach (var item in Items)
-        {
-            if (item.Name == "Sulfuras, Hand of Ragnaros")
-            {
-                UpdateSulfuras();
-            }
-            else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-            {
-                UpdateBackstagePasses(item);
-            }
-            else if (item.Name == "Aged Brie")
-            {
-                _agedBrieStrategy.UpdateAgedBrie(item);
-            }
-            else
-            {
-                _normalItemStrategy.UpdateNormalItem(item);
-            }
-        }
-    }
-
-    private void UpdateBackstagePasses(Item item)
+    public void UpdateBackstagePasses(Item item)
     {
         if (item.Quality < 50)
         {
@@ -116,6 +86,45 @@ public class GildedRose
         if (item.SellIn < 0)
         {
             item.Quality -= item.Quality;
+        }
+    }
+}
+
+public class GildedRose
+{
+    IList<Item> Items;
+    private readonly NormalItemStrategy _normalItemStrategy;
+    private readonly AgedBrieStrategy _agedBrieStrategy;
+    private readonly BackstagePassesStrategy _backstagePassesStrategy;
+
+    public GildedRose(IList<Item> Items)
+    {
+        this.Items = Items;
+        _normalItemStrategy = new NormalItemStrategy();
+        _agedBrieStrategy = new AgedBrieStrategy();
+        _backstagePassesStrategy = new BackstagePassesStrategy();
+    }
+
+    public void UpdateQuality()
+    {
+        foreach (var item in Items)
+        {
+            if (item.Name == "Sulfuras, Hand of Ragnaros")
+            {
+                UpdateSulfuras();
+            }
+            else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+            {
+                _backstagePassesStrategy.UpdateBackstagePasses(item);
+            }
+            else if (item.Name == "Aged Brie")
+            {
+                _agedBrieStrategy.UpdateAgedBrie(item);
+            }
+            else
+            {
+                _normalItemStrategy.UpdateNormalItem(item);
+            }
         }
     }
 
