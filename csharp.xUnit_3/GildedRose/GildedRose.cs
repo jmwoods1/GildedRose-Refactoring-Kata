@@ -18,100 +18,182 @@ public class GildedRose
             var isBackstagePasses = item.Name == "Backstage passes to a TAFKAL80ETC concert";
             if (isBackstagePasses)
             {
-                Pants(item, true);
-            }
-            else
-            {
-                Pants(item, false);
-            }
-        }
-    }
-
-    private void Pants(Item item, bool isBackstagePasses)
-    {
-        if (item.Name == "Aged Brie")
-        {
-            if (item.Quality < 50)
-            {
-                item.Quality += 1;
-            }
-
-            item.SellIn -= 1;
-
-            if (item.SellIn < 0)
-            {
-                if (item.Quality < 50)
+                if (item.Name == "Aged Brie")
                 {
-                    item.Quality += 1;
-                }
-            }
-        }
-        else
-        {
-            if (isBackstagePasses)
-            {
-                if (item.Quality < 50)
-                {
-                    item.Quality += 1;
-
-                    if (isBackstagePasses)
+                    if (item.Quality < 50)
                     {
-                        if (item.SellIn < 11)
-                        {
-                            if (item.Quality < 50)
-                            {
-                                item.Quality += 1;
-                            }
-                        }
+                        item.Quality += 1;
+                    }
 
-                        if (item.SellIn < 6)
+                    item.SellIn -= 1;
+
+                    if (item.SellIn < 0)
+                    {
+                        if (item.Quality < 50)
                         {
-                            if (item.Quality < 50)
-                            {
-                                item.Quality += 1;
-                            }
+                            item.Quality += 1;
                         }
                     }
                 }
-            }
-            else
-            {
-                if (item.Quality > 0)
+                else
                 {
+                    if (true)
+                    {
+                        if (item.Quality < 50)
+                        {
+                            item.Quality += 1;
+
+                            if (true)
+                            {
+                                if (item.SellIn < 11)
+                                {
+                                    if (item.Quality < 50)
+                                    {
+                                        item.Quality += 1;
+                                    }
+                                }
+
+                                if (item.SellIn < 6)
+                                {
+                                    if (item.Quality < 50)
+                                    {
+                                        item.Quality += 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (item.Quality > 0)
+                        {
+                            if (item.Name == "Sulfuras, Hand of Ragnaros")
+                            {
+                            }
+                            else
+                            {
+                                item.Quality -= 1;
+                            }
+                        }
+                    }
+
                     if (item.Name == "Sulfuras, Hand of Ragnaros")
                     {
                     }
                     else
                     {
-                        item.Quality -= 1;
+                        item.SellIn -= 1;
                     }
-                }
-            }
 
-            if (item.Name == "Sulfuras, Hand of Ragnaros")
-            {
-            }
-            else
-            {
-                item.SellIn -= 1;
-            }
-
-            if (item.SellIn < 0)
-            {
-                if (isBackstagePasses)
-                {
-                    item.Quality -= item.Quality;
-                }
-                else
-                {
-                    if (item.Quality > 0)
+                    if (item.SellIn < 0)
                     {
-                        if (item.Name == "Sulfuras, Hand of Ragnaros")
+                        if (true)
                         {
+                            item.Quality -= item.Quality;
                         }
                         else
                         {
-                            item.Quality -= 1;
+                            if (item.Quality > 0)
+                            {
+                                if (item.Name == "Sulfuras, Hand of Ragnaros")
+                                {
+                                }
+                                else
+                                {
+                                    item.Quality -= 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (item.Name == "Aged Brie")
+                {
+                    if (item.Quality < 50)
+                    {
+                        item.Quality += 1;
+                    }
+
+                    item.SellIn -= 1;
+
+                    if (item.SellIn < 0)
+                    {
+                        if (item.Quality < 50)
+                        {
+                            item.Quality += 1;
+                        }
+                    }
+                }
+                else
+                {
+                    if (false)
+                    {
+                        if (item.Quality < 50)
+                        {
+                            item.Quality += 1;
+
+                            if (false)
+                            {
+                                if (item.SellIn < 11)
+                                {
+                                    if (item.Quality < 50)
+                                    {
+                                        item.Quality += 1;
+                                    }
+                                }
+
+                                if (item.SellIn < 6)
+                                {
+                                    if (item.Quality < 50)
+                                    {
+                                        item.Quality += 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (item.Quality > 0)
+                        {
+                            if (item.Name == "Sulfuras, Hand of Ragnaros")
+                            {
+                            }
+                            else
+                            {
+                                item.Quality -= 1;
+                            }
+                        }
+                    }
+
+                    if (item.Name == "Sulfuras, Hand of Ragnaros")
+                    {
+                    }
+                    else
+                    {
+                        item.SellIn -= 1;
+                    }
+
+                    if (item.SellIn < 0)
+                    {
+                        if (false)
+                        {
+                            item.Quality -= item.Quality;
+                        }
+                        else
+                        {
+                            if (item.Quality > 0)
+                            {
+                                if (item.Name == "Sulfuras, Hand of Ragnaros")
+                                {
+                                }
+                                else
+                                {
+                                    item.Quality -= 1;
+                                }
+                            }
                         }
                     }
                 }
