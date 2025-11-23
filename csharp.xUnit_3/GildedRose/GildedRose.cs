@@ -15,8 +15,7 @@ public class GildedRose
     {
         foreach (var item in Items)
         {
-            var isSulfuras = item.Name == "Sulfuras, Hand of Ragnaros";
-            if (isSulfuras)
+            if (item.Name == "Sulfuras, Hand of Ragnaros")
             {
             }
             else
