@@ -106,7 +106,8 @@ public class GildedRose
             IItemStrategy strategy = null;
             if (item.Name == "Sulfuras, Hand of Ragnaros")
             {
-                new SulfurasStrategy().Update(item);
+                strategy = new SulfurasStrategy();
+                //new SulfurasStrategy().Update(item);
             }
             else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
