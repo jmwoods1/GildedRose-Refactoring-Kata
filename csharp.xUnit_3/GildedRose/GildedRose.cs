@@ -17,6 +17,7 @@ public class GildedRose
         {
             if (item.Name == "Sulfuras, Hand of Ragnaros")
             {
+                UpdateSulfuras();
             }
             else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
@@ -83,5 +84,9 @@ public class GildedRose
                 }
             }
         }
+    }
+
+    private void UpdateSulfuras()
+    {
     }
 }
