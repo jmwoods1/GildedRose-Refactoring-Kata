@@ -104,25 +104,33 @@ public class GildedRose
         foreach (var item in Items)
         {
             IItemStrategy strategy;
-            if (item.Name == "Sulfuras, Hand of Ragnaros")
-            {
-                strategy = new SulfurasStrategy();
-            }
-            else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-            {
-                strategy = new BackstagePassesStrategy();
-            }
-            else if (item.Name == "Aged Brie")
-            {
-                strategy = new AgedBrieStrategy();
-            }
-            else
-            {
-                strategy = new NormalItemStrategy();
-            }
+            strategy = StrategyFactory(item);
 
             strategy.Update(item);
         }
+    }
+
+    private IItemStrategy StrategyFactory(Item item)
+    {
+        IItemStrategy strategy;
+        if (item.Name == "Sulfuras, Hand of Ragnaros")
+        {
+            strategy = new SulfurasStrategy();
+        }
+        else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+        {
+            strategy = new BackstagePassesStrategy();
+        }
+        else if (item.Name == "Aged Brie")
+        {
+            strategy = new AgedBrieStrategy();
+        }
+        else
+        {
+            strategy = new NormalItemStrategy();
+        }
+
+        return strategy;
     }
 }
 
