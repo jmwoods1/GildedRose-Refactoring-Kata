@@ -2,13 +2,40 @@
 
 namespace GildedRoseKata;
 
+public class NormalItemStrategy
+{
+    public NormalItemStrategy()
+    {
+    }
+
+    public void UpdateNormalItem(Item item)
+    {
+        if (item.Quality > 0)
+        {
+            item.Quality -= 1;
+        }
+
+        item.SellIn -= 1;
+
+        if (item.SellIn < 0)
+        {
+            if (item.Quality > 0)
+            {
+                item.Quality -= 1;
+            }
+        }
+    }
+}
+
 public class GildedRose
 {
     IList<Item> Items;
+    private readonly NormalItemStrategy _normalItemStrategy;
 
     public GildedRose(IList<Item> Items)
     {
         this.Items = Items;
+        _normalItemStrategy = new NormalItemStrategy();
     }
 
     public void UpdateQuality()
@@ -29,25 +56,7 @@ public class GildedRose
             }
             else
             {
-                UpdateNormalItem(item);
-            }
-        }
-    }
-
-    private void UpdateNormalItem(Item item)
-    {
-        if (item.Quality > 0)
-        {
-            item.Quality -= 1;
-        }
-
-        item.SellIn -= 1;
-
-        if (item.SellIn < 0)
-        {
-            if (item.Quality > 0)
-            {
-                item.Quality -= 1;
+                _normalItemStrategy.UpdateNormalItem(item);
             }
         }
     }
