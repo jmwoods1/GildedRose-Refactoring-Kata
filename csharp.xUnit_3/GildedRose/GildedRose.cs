@@ -27,15 +27,42 @@ public class NormalItemStrategy
     }
 }
 
+public class AgedBrieStrategy
+{
+    public AgedBrieStrategy()
+    {
+    }
+
+    public void UpdateAgedBrie(Item item)
+    {
+        if (item.Quality < 50)
+        {
+            item.Quality += 1;
+        }
+
+        item.SellIn -= 1;
+
+        if (item.SellIn < 0)
+        {
+            if (item.Quality < 50)
+            {
+                item.Quality += 1;
+            }
+        }
+    }
+}
+
 public class GildedRose
 {
     IList<Item> Items;
     private readonly NormalItemStrategy _normalItemStrategy;
+    private readonly AgedBrieStrategy _agedBrieStrategy;
 
     public GildedRose(IList<Item> Items)
     {
         this.Items = Items;
         _normalItemStrategy = new NormalItemStrategy();
+        _agedBrieStrategy = new AgedBrieStrategy();
     }
 
     public void UpdateQuality()
@@ -52,29 +79,11 @@ public class GildedRose
             }
             else if (item.Name == "Aged Brie")
             {
-                UpdateAgedBrie(item);
+                _agedBrieStrategy.UpdateAgedBrie(item);
             }
             else
             {
                 _normalItemStrategy.UpdateNormalItem(item);
-            }
-        }
-    }
-
-    private void UpdateAgedBrie(Item item)
-    {
-        if (item.Quality < 50)
-        {
-            item.Quality += 1;
-        }
-
-        item.SellIn -= 1;
-
-        if (item.SellIn < 0)
-        {
-            if (item.Quality < 50)
-            {
-                item.Quality += 1;
             }
         }
     }
