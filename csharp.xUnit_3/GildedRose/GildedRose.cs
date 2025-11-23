@@ -90,12 +90,24 @@ public class BackstagePassesStrategy
     }
 }
 
+public class SulfurasStrategy
+{
+    public SulfurasStrategy()
+    {
+    }
+
+    public void UpdateSulfuras()
+    {
+    }
+}
+
 public class GildedRose
 {
     IList<Item> Items;
     private readonly NormalItemStrategy _normalItemStrategy;
     private readonly AgedBrieStrategy _agedBrieStrategy;
     private readonly BackstagePassesStrategy _backstagePassesStrategy;
+    private readonly SulfurasStrategy _sulfurasStrategy;
 
     public GildedRose(IList<Item> Items)
     {
@@ -103,6 +115,7 @@ public class GildedRose
         _normalItemStrategy = new NormalItemStrategy();
         _agedBrieStrategy = new AgedBrieStrategy();
         _backstagePassesStrategy = new BackstagePassesStrategy();
+        _sulfurasStrategy = new SulfurasStrategy();
     }
 
     public void UpdateQuality()
@@ -111,7 +124,7 @@ public class GildedRose
         {
             if (item.Name == "Sulfuras, Hand of Ragnaros")
             {
-                UpdateSulfuras();
+                _sulfurasStrategy.UpdateSulfuras();
             }
             else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
@@ -126,9 +139,5 @@ public class GildedRose
                 _normalItemStrategy.UpdateNormalItem(item);
             }
         }
-    }
-
-    private void UpdateSulfuras()
-    {
     }
 }
