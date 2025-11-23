@@ -103,7 +103,7 @@ public class GildedRose
     {
         foreach (var item in Items)
         {
-            IItemStrategy strategy = null;
+            IItemStrategy strategy;
             if (item.Name == "Sulfuras, Hand of Ragnaros")
             {
                 strategy = new SulfurasStrategy();
@@ -125,10 +125,7 @@ public class GildedRose
                 //new NormalItemStrategy().Update(item);
             }
 
-            if (strategy != null)
-            {
-                strategy.Update(item);
-            }
+            strategy.Update(item);
         }
     }
 }
