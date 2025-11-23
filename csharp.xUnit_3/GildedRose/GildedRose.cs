@@ -98,6 +98,7 @@ public class GildedRose
     {
         foreach (var item in Items)
         {
+            IItemStrategy strategy = null;
             if (item.Name == "Sulfuras, Hand of Ragnaros")
             {
                 new SulfurasStrategy().Update();
@@ -116,4 +117,9 @@ public class GildedRose
             }
         }
     }
+}
+
+public interface IItemStrategy
+{
+    void Update(Item item);
 }
