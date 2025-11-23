@@ -4,7 +4,7 @@ namespace GildedRoseKata;
 
 public class NormalItemStrategy
 {
-    public void UpdateNormalItem(Item item)
+    public void Update(Item item)
     {
         if (item.Quality > 0)
         {
@@ -25,7 +25,7 @@ public class NormalItemStrategy
 
 public class AgedBrieStrategy
 {
-    public void UpdateAgedBrie(Item item)
+    public void Update(Item item)
     {
         if (item.Quality < 50)
         {
@@ -46,7 +46,7 @@ public class AgedBrieStrategy
 
 public class BackstagePassesStrategy
 {
-    public void UpdateBackstagePasses(Item item)
+    public void Update(Item item)
     {
         if (item.Quality < 50)
         {
@@ -80,7 +80,7 @@ public class BackstagePassesStrategy
 
 public class SulfurasStrategy
 {
-    public void UpdateSulfuras()
+    public void Update()
     {
     }
 }
@@ -108,19 +108,19 @@ public class GildedRose
         {
             if (item.Name == "Sulfuras, Hand of Ragnaros")
             {
-                _sulfurasStrategy.UpdateSulfuras();
+                _sulfurasStrategy.Update();
             }
             else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
             {
-                _backstagePassesStrategy.UpdateBackstagePasses(item);
+                _backstagePassesStrategy.Update(item);
             }
             else if (item.Name == "Aged Brie")
             {
-                _agedBrieStrategy.UpdateAgedBrie(item);
+                _agedBrieStrategy.Update(item);
             }
             else
             {
-                _normalItemStrategy.UpdateNormalItem(item);
+                _normalItemStrategy.Update(item);
             }
         }
     }
